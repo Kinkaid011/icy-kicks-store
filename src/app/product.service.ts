@@ -7,9 +7,13 @@ import { ALLPRODUCTS } from './all-products';
 })
 export class ProductService {
 
+
+
   getProducts(): Product[] {
     return ALLPRODUCTS;
   }
+
+
 
   constructor() { }
 }

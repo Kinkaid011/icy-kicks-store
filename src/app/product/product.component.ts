@@ -23,8 +23,7 @@ export class ProductComponent implements OnInit {
   // products = ALLPRODUCTS;   
 
   @Input() selectedProduct: Product;
- 
-  page = true;
+  @Input() selectedInfo: boolean;
 
   constructor() { }
 

@@ -1,0 +1,46 @@
+
+
+
+<div class="wrapper">
+
+    <h1>{{ name }}</h1>
+    
+    <!-- <div class="product-list">
+        <app-product class="list-item" *ngFor="let piece of products" [selectedProduct]="piece"  [selectedInfo]="page"></app-product>
+    </div> -->
+    <div class="product-list">
+        <app-product class="list-item" *ngFor="let piece of items" [selectedProduct]="piece"  [selectedInfo]="page"></app-product>
+    </div>
+
+    <div class="filter">
+        <h3><input type="checkbox">Show All</h3>
+
+        <hr>
+
+        <h3><input type="checkbox">Adidas</h3>
+        <h3><input type="checkbox">Airmax</h3>
+        <h3><input type="checkbox">Jordan</h3>
+        <h3><input type="checkbox">Nike</h3>
+        <h3><input type="checkbox">Timberland</h3>
+
+        <hr>
+
+        <h3><input type="checkbox">Male</h3>
+        <h3><input type="checkbox">Female</h3>
+
+        <hr>
+
+        <h3><input type="checkbox">$0 - $25</h3>
+        <h3><input type="checkbox">$25 - $75</h3>
+        <h3><input type="checkbox">$75 - $125</h3>
+        <h3><input type="checkbox">$125 <</h3>
+
+        <hr>
+
+        <div>
+            <button class="clear">Clear</button>
+            <button class="apply">Apply</button>
+        </div>
+
+    </div>
+</div>

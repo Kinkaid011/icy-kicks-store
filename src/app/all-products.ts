@@ -20,7 +20,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 70,
         image: "../../assets/images/shoe-list/adidasg.jpg",
         brand: "Adidas",
-        section: "other"
+        section: "Featured Items"
     },
 
     {
@@ -31,7 +31,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 70,
         image: "../../assets/images/shoe-list/adidasgr.jpg",
         brand: "Adidas",
-        section: "other"
+        section: "Featured Items"
     },
 
     {
@@ -42,7 +42,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 80,
         image: "../../assets/images/shoe-list/adidasoriginal.jpg",
         brand: "Adidas",
-        section: "other"
+        section: "Member Exclusive"
     },
 
     {
@@ -53,7 +53,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 140,
         image: "../../assets/images/shoe-list/maxblackred.jpg",
         brand: "Airmax",
-        section: "most-wanted"
+        section: "wanted"
     },
 
     {
@@ -64,7 +64,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 140,
         image: "../../assets/images/shoe-list/maxgold.jpg",
         brand: "Airmax",
-        section: "most-wanted"
+        section: "wanted"
     },
     
     {
@@ -75,7 +75,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 115,
         image: "../../assets/images/shoe-list/maxpink.jpg",
         brand: "Airmax",
-        section: "most-wanted"
+        section: "wanted"
     },
     
     {
@@ -86,7 +86,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 140,
         image: "../../assets/images/shoe-list/maxred.jpg",
         brand: "Airmax",
-        section: "most-wanted"
+        section: "wanted"
     },
     
     {
@@ -97,7 +97,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 140,
         image: "../../assets/images/shoe-list/maxsilver.jpg",
         brand: "Airmax",
-        section: "most-wanted"
+        section: "Featured Items"
     },
     
     {
@@ -119,7 +119,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 110,
         image: "../../assets/images/shoe-list/nikesgray.jpg",
         brand: "Nike",
-        section: "other"
+        section: "Featured Items"
     },
     
     {
@@ -130,7 +130,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 110,
         image: "../../assets/images/shoe-list/nikesp.jpg",
         brand: "Nike",
-        section: "other"
+        section: "Featured Items"
     },
     
     {
@@ -152,7 +152,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 100,
         image: "../../assets/images/shoe-list/nikesw.jpg",
         brand: "Nike",
-        section: "other"
+        section: "other"    
     },
     
     {
@@ -163,7 +163,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 150,
         image: "../../assets/images/shoe-list/timbsblack.jpg",
         brand: "Timberland",
-        section: "other"
+        section: "Fall Hits"    
     },
     
     {
@@ -174,8 +174,8 @@ export const ALLPRODUCTS: Product[] = [
         price: 150,
         image: "../../assets/images/shoe-list/timbsblue.jpg",
         brand: "Timberland",
-        section: "other"
-    },
+        section: "Fall Hits"
+        },
     
     {
         id: 17,
@@ -185,8 +185,8 @@ export const ALLPRODUCTS: Product[] = [
         price: 110,
         image: "../../assets/images/shoe-list/timbsheels.jpg",
         brand: "Timberland",
-        section: "other"
-    },
+        section: "Member Exclusive"
+        },
     
     {
         id: 18,
@@ -196,8 +196,8 @@ export const ALLPRODUCTS: Product[] = [
         price: 150,
         image: "../../assets/images/shoe-list/timbswheat.jpg",
         brand: "Timberland",
-        section: "other"
-    },
+        section: "Fall Hits"
+        },
     
     {
         id: 19,
@@ -208,7 +208,7 @@ export const ALLPRODUCTS: Product[] = [
         image: "../../assets/images/shoe-list/kidnikeswhite.jpg",
         brand: "Nike",
         section: "other"
-    },
+        },
     
     {
         id: 20,
@@ -219,7 +219,7 @@ export const ALLPRODUCTS: Product[] = [
         image: "../../assets/images/shoe-list/kidsadidasblack.jpg",
         brand: "Adidas",
         section: "other"
-    },
+        },
     
     {
         id: 21,
@@ -229,7 +229,7 @@ export const ALLPRODUCTS: Product[] = [
         price: 50,
         image: "../../assets/images/shoe-list/kidsforces.jpg",
         brand: "Nike",
-        section: "other"
+        section: "Member Exclusive"
     },
     
     {
@@ -251,7 +251,28 @@ export const ALLPRODUCTS: Product[] = [
         price: 50,
         image: "../../assets/images/shoe-list/kidstimbsgreen.jpg",
         brand: "Timberland",
-        section: "other"
-    }
+        section: "Fall Hits"
+    },
+
+    {
+        id: 24,
+        name: "Black Jordans",
+        gender: "Men's Shoe",
+        kid: false,
+        price: 140,
+        image: "../../assets/images/shoe-list/jordansblack.jpg",
+        brand: "Jordan",
+        section: "Trending"
+    },
+    {
+        id: 25,
+        name: "Orange Jordans",
+        gender: "Men's Shoe",
+        kid: false,
+        price: 140,
+        image: "../../assets/images/shoe-list/jordansorange.jpg",
+        brand: "Jordan",
+        section: "Trending"
+    },
     
 ]
