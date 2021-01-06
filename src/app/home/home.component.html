@@ -1,117 +1,139 @@
 
-<div class="container">
+<ngx-simplebar class="main-scroll" [options]="options">
+    <div class="container">
 
-    <header>
-        <div class="exclusive-img">
-            <img src="../assets/images/hands-jordans.jpg" alt="">
-        </div>
-
-        <div class="orange-bg">
-            <div class="caption">
-                <h1>NEW MEMBER EXCLUSIVES</h1>
-                <p>Featuring new running essentials & daybreak colorways.</p>
-                <div>
-                    <a routerLink="/product-list/Member Exclusive"><button> Explore</button></a>
-                    <button>Shop</button>
+        <header>
+            <div class="exclusive-img">
+                <img src="../assets/images/pink-ones.jpg" alt="">
+            </div>
+    
+            <div class="orange-bg" routerLink="/product-list/Member Exclusive">
+                <div class="caption">
+                    <h1>NEW MEMBER EXCLUSIVES</h1>
+                    <p>Featuring new running essentials & daybreak colorways.</p>
+                    <div>
+                        <a routerLink="/product-list/Member Exclusive"><button>Explore</button></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-
-
-    <section class="featured">
-        <h2>New From Icy Kicks</h2>
-
-        <div class="featured-bg">
-            <div class="featured-item">
-                <h1>GEAR UP FOR ICY KICKS</h1>
-                <p>Featuring new running essentials & daybreak colorways.</p>
-                <a routerLink="/product-list/Featured Items"><button> Explore</button></a>
+        </header>
+    
+    
+        <section class="featured">
+            <h2 class="title">New From Icy Kicks</h2>
+    
+            <div class="featured-bg" routerLink="/product-list/Featured Items">
+                <div class="featured-item">
+                    <h1>GEAR UP FOR ICY KICKS</h1>
+                    <p>Featuring new running essentials & daybreak colorways.</p>
+                    <a routerLink="/product-list/Featured Items"><button> Explore</button></a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="trending">
-        <h2>Trending</h2>
-        <div class="trend-one">
-            <div class="trend-item">
-                <h3>New Jordan 1 Purple Heat</h3>
-                <a routerLink="/product-list/Trending"><button> Shop</button></a>
-            </div>
-        </div>
-
-        <div class="trend-two">
-            <div class="trend-item">
-                <h3>New Jordan 1 Purple Heat</h3>
-                <a routerLink="/product-list/Trending"><button> Shop</button></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="wanted">
-        <h2>This Week’s Most Wanted</h2>
-        <div class="wanted-container">
-            <a routerLink="/product-list/Most Wanted">
-                <app-product 
-                    class="wanted-item" 
-                    *ngFor="let item of mostWanted"
-                    [selectedProduct]="item">
-                </app-product>
+        </section>
+    
+        <section class="trending">
+            <h2>Trending</h2>
+            <a class="block-one" routerLink="/product-detail/trendingone.name/{{ trendingone.id }}">
+                <div class="trend-one">
+                    <div class="trend-item">
+                        <h3>New Jordan 1 Purple Heat</h3>
+                        <a routerLink="/product-detail/{{ trendingone.name }}/{{ trendingone.id }}"><button> Shop</button></a>
+                    </div>
+                </div>
             </a>
-        </div>
-    </section>
-
-    <section class="trending">
-        <h2 class="first">Fall Hits</h2>
-        <div class="trend-one">
-            <div class="trend-item">
-                <p>Featuring new running essentials & daybreak colorways.</p>
-                <a routerLink="/product-list/Fall Hits"><button> Shop</button></a>
+    
+            <a class="block-two" routerLink="/product-detail/{{ trendingtwo.name }}/{{ trendingtwo.id }}">
+                <div class="trend-two">
+                    <div class="trend-item">
+                        <h3>New Jordan 1 Purple Heat</h3>
+                        <a routerLink="/product-detail/{{ trendingtwo.name }}/{{ trendingtwo.id }}"><button> Shop</button></a>
+                    </div>
+                </div>
+            </a>
+        </section>
+    
+        <section class="wanted">
+            <h2 class="title">This Week’s Most Wanted</h2>
+            <div class="wanted-container">
+                <ngx-simplebar class="scroll-test" [options]="options">
+                        <app-product 
+                            class="wanted-item" 
+                            *ngFor="let item of mostWanted"
+                            [selectedProduct]="item"
+                            [selectedInfo]="detail"
+                            >
+                            
+                        </app-product>
+                </ngx-simplebar>
             </div>
-        </div>
-
-        <div class="trend-two">
-            <div class="trend-item">
-                <p>Featuring new running essentials & daybreak colorways.</p>
-                <a routerLink="/product-list/Fall Hits"><button> Shop</button></a>
+        </section>
+    
+    
+    
+        <section class="fall">
+            <h2 class="">Fall Hits</h2>
+            <a class="block-one" routerLink="/product-list/Fall Hits">
+                <div class="fall-one">
+                    <div class="fall-item">
+                        <p>Featuring new running essentials & daybreak colorways.</p>
+                        <a routerLink="/product-list/Fall Hits"><button> Shop</button></a>
+                    </div>
+                </div>
+            </a>
+    
+            <a class="block-two" routerLink="/product-list/Fall Hits">
+                <div class="fall-two">
+                    <div class="fall-item">
+                        <p>Featuring new running essentials & daybreak colorways.</p>
+                        <a routerLink="/product-list/Fall Hits"><button> Shop</button></a>
+                    </div>
+                </div>
+            </a>
+        </section>
+    
+        <section class="account">
+            <div class="logo"></div>
+            <h1 class="account-item-one">Where All Sneaker Heads Belong</h1>
+            <div class="account-item-two">
+                <a href=""><p>Featured</p></a>
+                <a href=""><p>Trending</p></a>
+                <a href=""><p>Fall Kicks</p></a>
+                <a href=""><p>Most Wanted</p></a>
             </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-item-1">
+            <a href=""><h5>GIFT CARDS</h5></a>
+            <a href=""><h5>PROMOTIONS</h5></a>
+            <a href=""><h5>BECOME A MEMBER</h5></a>
+            <a href=""><h5>SEND US FEEDBACK</h5></a>      
         </div>
-    </section>
-
-    <section class="account">
-        <div class="logo"></div>
-        <h1 class="account-item-one">Where All Sneaker Heads Belong</h1>
-        <div class="account-item-two">
-            <a href=""><p>Featured</p></a>
-            <a href=""><p>Trending</p></a>
-            <a href=""><p>Fall Kicks</p></a>
-            <a href=""><p>Most Wanted</p></a>
+    
+        <div class="footer-item-2">
+            <a class="foot-title" href=""><h5>Get Help</h5></a>    
+            <a href=""><p>Order Status</p></a>    
+            <a href=""><p>Shipping and Delivery</p></a>    
+            <a href=""><p>Returns</p></a>    
+            <a href=""><p>Payment Options</p></a>    
+            <a href=""><p>Contact Us</p></a>        
         </div>
-    </section>
-</div>
+    
+        <div class="footer-item-3">
+            <a href=""><img src="../../assets/images/facebook-gray.svg" alt="facebook icon"></a>
+            <a href=""><img src="../../assets/images/twitter-gray.svg" alt="twitter icon"></a>
+            <a href=""><img src="../../assets/images/instagram-gray.svg" alt="instagram icon"></a>
+        </div>
+    
+        <div class="footer-item-4">
+            <a href=""><p>Guides</p></a>
+            <a href=""><p>Terms of Sale</p></a>
+            <a href=""><p>Terms of Use</p></a>
+            <a href=""><p>Privacy Policy</p></a> 
+        </div>
+    </footer>
+    
+</ngx-simplebar>
 
-<footer>
-    <div class="footer-item-1">
-        <a href=""><h5>GIFT CARDS</h5></a>
-        <a href=""><h5>PROMOTIONS</h5></a>
-        <a href=""><h5>BECOME A MEMBER</h5></a>
-        <a href=""><h5>SEND US FEEDBACK</h5></a>      
-    </div>
 
-    <div class="footer-item-2">
-        <a href=""><p>Get Help</p></a>    
-    </div>
-
-    <div class="footer-item-3">
-        <a href=""><img src="../../assets/images/facebook-gray.svg" alt="facebook icon"></a>
-        <a href=""><img src="../../assets/images/twitter-gray.svg" alt="twitter icon"></a>
-        <a href=""><img src="../../assets/images/instagram-gray.svg" alt="instagram icon"></a>
-    </div>
-
-    <div class="footer-item-4">
-        <a href=""><p>Guides</p></a>
-        <a href=""><p>Terms of Sale</p></a>
-        <a href=""><p>Terms of Use</p></a>
-        <a href=""><p>Privacy Policy</p></a> 
-    </div>
-</footer>

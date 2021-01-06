@@ -9,5 +9,15 @@ import { ALLPRODUCTS } from './all-products';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  switch: boolean = false;
+  cover: boolean = false;
+  overlay: boolean = true;
 
+  toggle(): void {
+    this.switch = !this.switch;
+    this.cover = !this.cover;
+    this.overlay = !this.overlay;
+  };
+    
 }
+

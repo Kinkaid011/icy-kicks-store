@@ -4,42 +4,117 @@
 <div class="wrapper">
 
     <h1>{{ name }}</h1>
-    
-    <!-- <div class="product-list">
-        <app-product class="list-item" *ngFor="let piece of products" [selectedProduct]="piece"  [selectedInfo]="page"></app-product>
-    </div> -->
-    <div class="product-list">
-        <app-product class="list-item" *ngFor="let piece of items" [selectedProduct]="piece"  [selectedInfo]="page"></app-product>
-    </div>
 
-    <div class="filter">
-        <h3><input type="checkbox">Show All</h3>
+    <div class="filter-wrapper">
+        
+        <div class="filter">
+            <input 
+                id="showAll" 
+                name="filterBox" 
+                type="checkbox" 
+                (click)="showAll()">
+            <label for="showAll">Show All</label> <br>
+            <!-- <input 
+                id="reset" 
+                name="filterBox" 
+                type="checkbox">
+            <label for="reset">Reset</label> -->
 
-        <hr>
+            <hr>
 
-        <h3><input type="checkbox">Adidas</h3>
-        <h3><input type="checkbox">Airmax</h3>
-        <h3><input type="checkbox">Jordan</h3>
-        <h3><input type="checkbox">Nike</h3>
-        <h3><input type="checkbox">Timberland</h3>
+            <h3>Brands</h3>
 
-        <hr>
+            <div>
+                <input 
+                    id="Adidas" 
+                    name="filterBox" type="checkbox" 
+                    value="Adidas" 
+                    (click)="checkAdidas($event)">
+                <label for="Adidas">Adidas</label>
+            </div>
+            <div>
+                <input 
+                    id="Airmax" 
+                    name="filterBox" 
+                    type="checkbox" 
+                    value="Airmax" 
+                    (click)="checkAirmax($event)">
+                <label for="Airmax">Airmax</label>
+            </div>
+            <div>
+                <input 
+                    id="Jordan" 
+                    name="filterBox" 
+                    type="checkbox" 
+                    value="Jordan" 
+                    (click)="checkJordan($event)">
+                <label for="Jordan">Jordan</label>
+            </div>
+            <div>
+                <input 
+                    id="Nike" 
+                    name="filterBox" 
+                    type="checkbox" 
+                    value="Nike" 
+                    (click)="checkNike($event)">
+                <label for="Nike">Nike</label>
+            </div>
+            <div>
+                <input 
+                    id="Timberland" 
+                    name="filterBox" 
+                    type="checkbox" 
+                    value="Timberland" 
+                    (click)="checkTimbs($event)">
+                <label for="Timberland">Timberland</label>
+            </div>
+        
+            <hr>
 
-        <h3><input type="checkbox">Male</h3>
-        <h3><input type="checkbox">Female</h3>
+            <h3>Prices</h3>
 
-        <hr>
+            <div>
+                <input 
+                    id="Male" 
+                    name="filterBox" 
+                    type="checkbox"
+                    value="Women's Shoe">
+                <label for="Male">Male</label>
+            </div>
+            <div>
+                <input 
+                    id="Female" 
+                    name="filterBox" 
+                    type="checkbox"
+                    value="Women's Shoe">
+                <label for="Female">Female</label>
+            </div>
 
-        <h3><input type="checkbox">$0 - $25</h3>
-        <h3><input type="checkbox">$25 - $75</h3>
-        <h3><input type="checkbox">$75 - $125</h3>
-        <h3><input type="checkbox">$125 <</h3>
 
-        <hr>
 
-        <div>
-            <button class="clear">Clear</button>
-            <button class="apply">Apply</button>
+            <hr>
+
+
+            <div>
+                <button class="clear" (click)="clearBrand()">Reset</button>
+                <button class="apply" (click)="applyFilter()">Apply</button>
+            </div>
+        </div>
+
+        <!-- <ul>
+            <li *ngFor="let gear of brands">{{ gear }}</li>
+        </ul> -->
+        <!-- <p>{{ airmaxResult }}</p> -->
+
+        
+
+        <div class="product-list">
+            <app-product
+                class="list-item" 
+                *ngFor="let piece of list|filter: brands:propBrand|secondFilter: '':'gen' "
+                [selectedProduct]="piece"  
+                [selectedInfo]="page">
+            </app-product>
         </div>
 
     </div>

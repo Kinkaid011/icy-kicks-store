@@ -1,6 +1,45 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$icy-kicks-primary: mat-palette($mat-indigo);
+$icy-kicks-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$icy-kicks-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$icy-kicks-theme: mat-light-theme((
+  color: (
+    primary: $icy-kicks-primary,
+    accent: $icy-kicks-accent,
+    warn: $icy-kicks-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($icy-kicks-theme);
+
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
 }
 
 body {
@@ -10,8 +49,6 @@ body {
 
 .container {
     padding: 0 15px;
-    max-width: 1400px;
-    margin: auto;
 }
 
 button {
@@ -25,6 +62,7 @@ button {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:hover {
@@ -34,11 +72,26 @@ a:hover {
 
 section {
     color: #353535;
+    margin: 50px 0;
 }
 
-/////Nav////
+.simplebar-wrapper {
+    height: 450px !important;
+}
+
+.main-scroll {
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+/////Header////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 nav {
-    height: 60px;
+    height: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,10 +102,60 @@ nav {
     }
 
     .menu {
-        width: 100px;
+        width: 150px;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+
+        a {
+            color: #353535;
+        }
+
     }
+}
+
+
+.open-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #f7f7f7;
+    color: #353535;
+    z-index: 2;
+    transform: translateX(300px);
+    transition: transform .5s ease;
+    
+    
+
+    h3 {
+        border-top: 1px solid lightgray;
+        margin: 0;
+        padding: 20px 0;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+
+    .circle {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 2.5em;
+        
+        img {
+            cursor: pointer;
+        }
+    }
+}
+
+.open-menu.toggle {
+    display: block;
+    transform: translateX(0);
 }
 
 .banner {
@@ -65,16 +168,25 @@ nav {
     margin-bottom: 10px;
 }
 
+.bg-overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #353535bb;
+    transition: opacity .5s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
+.bg-overlay.cover {
+    opacity: 1;
+    z-index: 1;
+}
+
 header {
     display: grid;
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
-    color: #353535;
-
-    button {
-        background-color: #353535;
-        color: white;
-    }
 
     h1, p {
         margin: 0;
@@ -85,7 +197,7 @@ header {
         img {
             
             width: 100%;
-            max-height: 500px;
+            max-height: 600px;
             
         }
     }
@@ -94,6 +206,7 @@ header {
         display: grid;
         align-items: end;
         padding: 0 0 15px 0;
+        cursor: pointer;
     }
 
     .caption {
@@ -102,45 +215,82 @@ header {
     }
 }
 
+/////Sections////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 .featured, .trending, .wanted, .account {
     h2, h3 {
-        font-weight: 500;
+        font-weight: 400;
     }
 }
+
 
 
 .featured-bg {   
     
     height: 400px;
-    background-color: lavender;
+    background-image: url("/assets/images/adidascoversm.png");
+    background-position: 50% 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    color: white;
+    cursor: pointer;
 
     .featured-item {
         grid-column: 1 /span 2;
         grid-row: 3;
-        padding: 0 0 15px 15px;
+        padding: 0 0 15px 15px;  
     }
+
 }
 
 .trending {
+    margin-bottom: 70px;
+}
+
+.fall {
+    margin: 0 0 0 0;
+}
+
+.trending, .fall {
     display: grid;
     grid-gap: 1em;
 
     h2 {
         margin-bottom: 0;
+        font-weight: 400;
     }
 }
 
-
-.trend-one, .trend-two {
+ .fall-one, .fall-two {
     height: 400px;
-    background-color: lavender;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    color: white;
     
+    .fall-item {
+        grid-column: 1 /span 3;
+        grid-row: 3;
+        padding: 0 0 15px 15px;
+    }
+}
+
+.trend-one, .trend-two {
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    color: #353535;
+
+    button {
+        background-color: #353535;
+        color: #f7f7f7;
+    }
+
     .trend-item {
         grid-column: 1 /span 3;
         grid-row: 3;
@@ -148,12 +298,55 @@ header {
     }
 }
 
+.trend-one {
+    background-image: url("/assets/images/trend-coverone.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.trend-two {
+    background-image: url("/assets/images/space-cover.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.fall-one {
+    background-image: url("/assets/images/timbscover.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.fall-two {
+    background-image: url("/assets/images/guyintimbs.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.block-one, .block-two {
+    display: block;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
 
 .wanted {
 
+    margin: 0 0 25px 0;
+
     .wanted-container {
-        white-space: nowrap;
         overflow: auto;
+        white-space: nowrap;
     }
 
     .wanted-item {
@@ -163,7 +356,7 @@ header {
     }
 
     img {
-        width: 345px;
+        width: 100%;
     }
 
 
@@ -176,11 +369,18 @@ header {
         color:  gray
     }
 
+    a {
+        color: #353535;
+    }
+
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////Product List Page Start///////
 
 .wrapper {
+    height: 100vh;
     max-width: 1200px;
     margin: auto;
     padding: 0 15px;
@@ -189,12 +389,13 @@ header {
 .product-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     grid-gap: 1em;
 
     img {
         width: 100%;
         height: auto;
-        max-width: 350px;
+        max-width: 165px;
     }
 
     h3 {
@@ -227,17 +428,104 @@ header {
         font-size: 1rem;
         margin-top: 15px;
     }
+
+    input {
+        cursor: pointer;
+    }
 }
 
 
 
-///////////Product List Page End///////
+
+
+///////////Product Item Page Start///////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.list-item {
+
+    
+    align-self: center;
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.shoe-details {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    grid-gap: 10px;
+
+    .shoe-info {
+        display: flex;
+        justify-content: space-between;
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        margin: 20px 0 0 0;
+
+        h3 {
+            margin: 0;
+            font-weight: 500;
+        }
+    }
+
+    h2 {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+        margin: 0 0 20px 0;
+    }
+
+    .size-info {
+        display: flex;
+        justify-content: space-between;
+        grid-row: 3;
+        grid-column: 1 / span 2;
+
+        h3 {
+            margin: 0;
+            font-weight: 500;
+        }
+    }
+
+    .shoe-size {
+        text-align: center;
+        border: 1px solid #353535;
+    }
+
+    .add-bag {
+        grid-row: 9;
+        grid-column: 1 / span 2;
+        font-size: 1rem;
+        background-color: #353535;
+        color: #f7f7f7;
+        padding: 15px 0 15px 0;
+        margin: 15px 0 0 0;
+    }
+
+    .favorite {
+        grid-row: 10;
+        grid-column: 1 / span 2;
+        font-size: 1rem;
+        padding: 15px 0 15px 0;
+
+        img {
+            position: relative;
+            top: 3px;
+        }
+    }
+}
+
+///////////Product Item Page End///////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .account {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 500px;
+    height: 600px;
+    max-width: 1300px;
+    margin: 50px auto;
     padding-top: 20px;
 
     a {
@@ -253,9 +541,11 @@ header {
 
     h1 {
         font-size: 3rem;
-        margin: 0;
     }
 }
+
+////Footer////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 footer {
     background-color: #353535;
@@ -283,51 +573,79 @@ footer {
     }
 }
 
+///Media Queries///
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 @media (min-width: 768px) {
 
-    section {
-        margin: 75px 0;
+   header {
+       margin: 0 0 65px 0;
+
+       .orange-bg {
+        background-color: #24d1f0;
+        color: #f7f7f7;
+        padding: 0 0 15px 15px;
+
+        button {
+            background-color: #f7f7f7;
+            color: #353535
+        }
+    }
+   }
+
+    .exclusive-img img {
+        height: 400px;
     }
 
-    nav {
-        .menu {
-            width: 150px;
+    .featured-bg {
+
+        .featured-item {
+            width: 350px;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-top: 0;
         }
     }
 
     .product-list {
-        grid-template-columns: 1fr 1fr 1fr;
+    
+        img {
+            width: 350px;
+            max-width: 350px;
+        }
     }
 
-    .trend-one {
+    .trending, .fall {
+        grid-template-rows: .125fr 1.1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .block-one {
         grid-row: 2;
+        grid-column: 1;
     }
     
-    .trend-two {
+    .block-two {
         grid-row: 2;
+        grid-column: 2; 
     }
 
-    .wanted-container::-webkit-scrollbar-track
-    {
-    
-    background-color: #ffffff;
-    }
+    .wanted {
 
-    .wanted-container::-webkit-scrollbar
-    {
-    width: 6px;
-    background-color: #ffffff;
-    }
-
-    .wanted-container::-webkit-scrollbar-thumb
-    {
-    background-color: lightgray;
-    border-radius: 10px;
+        .wanted-item {
+            width: 345px;
+        }
     }
 
     .account {
+        height: 450px;
         display: grid;
-        grid-template-columns: .5fr 1fr .5fr;
+        grid-template-columns: .5fr 1.2fr .5fr;
         grid-template-rows: 1fr 1fr 1fr;
 
         .logo {
@@ -351,22 +669,12 @@ footer {
         }
     }
 
-    header {
-        .orange-bg {
-            background-color: #FF783C;
-            color: #f7f7f7;
-            padding: 0 0 15px 015px;
-    
-            button {
-                background-color: #f7f7f7;
-                color: #335533;
-            }
-        }
-    }
 
     footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 300px;
+        padding: 30px 15px 15px 15px;
 
         p {
             margin: 0 0 15px 0;
@@ -397,76 +705,140 @@ footer {
 @media (min-width: 992px) {
 
     html {
-        font-size: 17px;
+        font-size: 16px;
     }
+
 
     a {
         font-size: 18px;
     }
 
     button {
-        font-size: 16px;
         outline: none;
         border: none;
-        border-radius: 20px;
-        padding: 8px 24px;
+        border-radius: 2em;
+        padding: 8px 28px;
         margin-right: 10px;
         cursor: pointer;
     }
 
+    .container {
+        padding: 0 50px;
+    }
+
+    nav {
+        padding: 0 50px;
+    }
+    
+
     header {
+        height:600px;
+
         .orange-bg {
-            grid-template-columns: 1fr 1fr;
+
+            height: 600px;
+            grid-template-columns: 1fr .5fr;
             grid-template-rows: 1fr 1fr;
-            padding: 0 0 0 30px;
+            padding: 0 0 30px 30px;
 
             .caption {
                 grid-row: 2;
-                align-self: start;
+                align-self: end;
             }
         }
     }
 
-    nav {
-        max-width: 1400px;
-        margin: auto;
+    .exclusive-img img {
+        height: 600px;
     }
 
-    // .wanted {
+    .simplebar-wrapper {
+        height: 500px !important;
+    }
 
-    //     .wanted-item {
-    //         margin: 0 22px;
-    //     }
+    .wanted {
 
-    // }
+        .wanted-item {
+            width: 400px;
+            margin: 0 30px 0 0;
+        }
+
+    }
+
+    .orange-bg {
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 1em;
+        }
+
+    }
     
-    .featured {
+    .featured, .trending, .fall, .wanted, footer {
 
         h1 {
             margin-bottom: 0;
+            font-size: 2.5em;
         }
 
-        p {
+        h2 {
+            font-size: 2em;
+        }
+
+        h3 {
             margin-top: 5px;
+            font-size: 1.25em;
+        }
+
+        button {
+            font-size: 1em;
+        }
+    }
+
+    .account {
+        p {
+            font-size: 1em;
         }
     }
 
     .featured-bg {
-        height: 500px;
+        height: 700px;
         grid-template-columns: 1fr .5fr 1fr;
 
         .featured-item {
             grid-column: 1;
+            padding: 0 0 30px 30px;
+            align-self: flex-end;
         }
     }
+    
 
-    .trend-one, .trend-two {
-        height: 500px;
+    .trend-one, .trend-two, .fall-one, .fall-two {
+        height: 700px;
+        padding: 0 0 0 30px;
+
+        h3 {
+            font-size: 2em;
+        }
 
         .trend-item {
             grid-column: 1 /span 2;
             grid-row: 3;
-            padding: 0 0 15px 15px;
+            padding: 0 0 30px 0;
+            align-self: flex-end;
+        }
+
+        .fall-item {
+            padding: 0 0 30px 0;
+            align-self: flex-end; 
+
+            p {
+                font-size: 1.25em;
+                grid-column: 1;
+            }
         }
     }
 
@@ -482,7 +854,92 @@ footer {
         
         h5, p {
             font-size: 14px;
-            font-weight: lighter;
+        }
+
+        img {
+           height: 32px;
+           width: auto; 
+        }
+    }
+
+     ////// Product List////////
+
+    .product-list {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        img {
+            width: 275px;
+        }
+    }
+
+    .filter {
+        hr {
+            margin: 20px 0;
+        }
+
+        h3 {
+            font-weight: bold;
+        }
+
+        input {
+            margin: 10px 4px 10px 0;
+        }
+    }
+
+    .filter-wrapper {
+        display: grid;
+        grid-template-columns: 1.25fr .75fr;
+        grid-gap: 2em;
+    }
+
+    ////// Product Page Item ////////
+
+    .list-item {
+        img {
+            width: 100%;
+            height: auto;
+            // max-height: 550px;
+            // max-width: 550px;
+        }
+    }
+
+    .page-title {
+        display: none;
+    }
+
+    .showcase {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: 1fr .5fr;
+    }
+
+    .shoe-details {
+        height: 450px;
+        // width: 400px;
+        // margin: auto;
+
+        h2 {
+            margin: 0;
+        }
+        
+        p {
+            margin: 10px 0;
         }
     }
 }
+
+@media (min-width: 1200px) {
+    header {
+        .orange-bg {
+            grid-template-columns: 1fr .25fr;
+        }
+    }
+
+    .showcase {
+        grid-gap: 3em;
+    }
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

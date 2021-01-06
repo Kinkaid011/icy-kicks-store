@@ -1,15 +1,28 @@
 
 
+<div class="bg-overlay" [class.cover]="cover"></div>
+
+<div class="open-menu" [class.toggle]="switch">
+    <div class="circle">
+        <img (click)="toggle()" src="../assets/images/close.svg" alt="">
+    </div>
+    <h3>Member Exclusives</h3>
+    <h3>Trending</h3>
+    <h3>Most Wanted</h3>
+    <h3>Fall Hits</h3>
+    <h3>Shop All</h3>
+</div>
 
 <nav>
     <span>logo</span>
 
     <div class="menu">
+        <a ref=""><span>Shop All</span></a>
         <img src="../assets/images/cart.svg" alt="cart icon">
-        <img src="../assets/images/search.svg" alt="search icon">
-        <img src="../assets/images/menu.svg" alt="menu icon">
+        <img (click)="toggle()" src="../assets/images/new-menu.svg" alt="menu icon">
     </div>
 </nav>
+
 
 <div class="banner">
     <span>Free Shipping Due To COVID-19</span>

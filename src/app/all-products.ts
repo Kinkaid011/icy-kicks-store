@@ -1,278 +1,328 @@
+import { FilterPipe } from './filter.pipe';
 import { Product } from './product';
 
 export const ALLPRODUCTS: Product[] = [
     {
         id: 1,
-        name: "Black Running",
+        name: "Black Jordans I",
         gender: "Men's Shoe",
         kid: false,
         price: 140,
-        image: "../../assets/images/shoe-list/adidasblack.jpg",
-        brand: "Adidas",
-        section: "other"
+        image: "../../assets/images/shoe-list/black-jordans.jpg",
+        brand: "Jordan",
+        section: "other",
+        gen: "male"
     },
 
     {
         id: 2,
-        name: "Cloudfoam",
-        gender: "Women's Shoe",
+        name: "Black and Red Airmax",
+        gender: "Men's Shoe",
         kid: false,
-        price: 70,
-        image: "../../assets/images/shoe-list/adidasg.jpg",
-        brand: "Adidas",
-        section: "Featured Items"
+        price: 170,
+        image: "../../assets/images/shoe-list/black-max.jpg",
+        brand: "Airmax",
+        section: "Featured Items",
+        gen: "male"
     },
 
     {
         id: 3,
-        name: "Superstar Legacy 7",
-        gender: "Women's Shoe",
+        name: "Black Runners",
+        gender: "Men's Shoe",
         kid: false,
-        price: 70,
-        image: "../../assets/images/shoe-list/adidasgr.jpg",
-        brand: "Adidas",
-        section: "Featured Items"
+        price: 120,
+        image: "../../assets/images/shoe-list/black-nikes.jpg",
+        brand: "Nike",
+        section: "Featured Items",
+        gen: "male"
     },
 
     {
         id: 4,
-        name: "Original White",
+        name: "All Black Timbs",
         gender: "Men's Shoe",
         kid: false,
         price: 80,
-        image: "../../assets/images/shoe-list/adidasoriginal.jpg",
-        brand: "Adidas",
-        section: "Member Exclusive"
+        image: "../../assets/images/shoe-list/black-timbs.jpg",
+        brand: "Timberland",
+        section: "Fall Hits",
+        gen: "male"
     },
 
     {
         id: 5,
-        name: "Black & Red",
-        gender: "Men's Shoe",
+        name: "High Top Forces",
+        gender: "Women's Shoe",
         kid: false,
         price: 140,
-        image: "../../assets/images/shoe-list/maxblackred.jpg",
-        brand: "Airmax",
-        section: "wanted"
+        image: "../../assets/images/shoe-list/black-womens-nike.jpg",
+        brand: "Nike",
+        section: "Members Exclusive",
+        gen: "female"
     },
 
     {
         id: 6,
-        name: "Gold",
+        name: "Gold Max",
         gender: "Men's Shoe",
         kid: false,
         price: 140,
-        image: "../../assets/images/shoe-list/maxgold.jpg",
+        image: "../../assets/images/shoe-list/gold-max.jpg",
         brand: "Airmax",
-        section: "wanted"
+        section: "Most Wanted",
+        gen: "male"
     },
     
     {
         id: 7,
-        name: "Pink",
-        gender: "Women's Shoe",
+        name: "Gold Jordan I",
+        gender: "Men's Shoe",
         kid: false,
         price: 115,
-        image: "../../assets/images/shoe-list/maxpink.jpg",
-        brand: "Airmax",
-        section: "wanted"
+        image: "../../assets/images/shoe-list/gold-jordans.jpg",
+        brand: "Jordan",
+        section: "Trend One",
+        gen: "male"
     },
     
     {
         id: 8,
-        name: "Red",
-        gender: "Men's Shoe",
+        name: "Gray Adidas",
+        gender: "Women's Shoe",
         kid: false,
         price: 140,
-        image: "../../assets/images/shoe-list/maxred.jpg",
-        brand: "Airmax",
-        section: "wanted"
+        image: "../../assets/images/shoe-list/gray-adidas.jpg",
+        brand: "Adidas",
+        section: "Members Exclusive",
+        gen: "female"
     },
     
     {
         id: 9,
-        name: "Silver",
+        name: "Green Adidas",
         gender: "Men's Shoe",
         kid: false,
         price: 140,
-        image: "../../assets/images/shoe-list/maxsilver.jpg",
-        brand: "Airmax",
-        section: "Featured Items"
+        image: "../../assets/images/shoe-list/green-adidas.jpg",
+        brand: "Adidas",
+        section: "Featured Items",
+        gen: "male"
     },
     
     {
         id: 10,
-        name: "Baby Blue & Red",
+        name: "Silver Timbs",
         gender: "Women's Shoe",
         kid: false,
         price: 90,
-        image: "../../assets/images/shoe-list/nikesbabyblue.jpg",
-        brand: "Nike",
-        section: "other"
+        image: "../../assets/images/shoe-list/grey-timbs.jpg",
+        brand: "Timberland",
+        section: "Fall Hits",
+        gen: "female"
     },
     
     {
         id: 11,
-        name: "Gray",
+        name: "Grizzle Airmax",
         gender: "Men's Shoe",
         kid: false,
         price: 110,
-        image: "../../assets/images/shoe-list/nikesgray.jpg",
-        brand: "Nike",
-        section: "Featured Items"
+        image: "../../assets/images/shoe-list/grizz-max.jpg",
+        brand: "Airmax",
+        section: "Featured Items",
+        gen: "male"
     },
     
     {
         id: 12,
-        name: "White and Pink",
-        gender: "Women's Shoe",
+        name: "Red Checks",
+        gender: "Men's Shoe",
         kid: false,
         price: 110,
-        image: "../../assets/images/shoe-list/nikesp.jpg",
+        image: "../../assets/images/shoe-list/red-check-jordans.jpg",
         brand: "Nike",
-        section: "Featured Items"
+        section: "Featured Items",
+        gen: "male"
     },
     
     {
         id: 13,
-        name: "Pink",
+        name: "Olive Jordans",
         gender: "Women's Shoe",
         kid: false,
         price: 100,
-        image: "../../assets/images/shoe-list/nikespink.jpg",
-        brand: "Nike",
-        section: "other"
+        image: "../../assets/images/shoe-list/olive-jordans.jpg",
+        brand: "Jordan",
+        section: "Members Exclusive",
+        gen: "female"
     },
     
     {
         id: 14,
-        name: "White",
+        name: "The Originals",
         gender: "Men's Shoe",
         kid: false,
         price: 100,
-        image: "../../assets/images/shoe-list/nikesw.jpg",
-        brand: "Nike",
-        section: "other"    
+        image: "../../assets/images/shoe-list/originals.jpg",
+        brand: "Adidas",
+        section: "Featured Items",
+        gen: "male"    
     },
     
     {
         id: 15,
-        name: "Black",
-        gender: "Men's Shoe",
+        name: "Pink Airmax",
+        gender: "Women's Shoe",
         kid: false,
         price: 150,
-        image: "../../assets/images/shoe-list/timbsblack.jpg",
-        brand: "Timberland",
-        section: "Fall Hits"    
+        image: "../../assets/images/shoe-list/pink-max.jpg",
+        brand: "Airmax",
+        section: "Most Wanted",
+        gen: "female"    
     },
     
     {
         id: 16,
-        name: "Blue",
-        gender: "Men's Shoe",
+        name: "Purle Max",
+        gender: "Women's Shoe",
         kid: false,
         price: 150,
-        image: "../../assets/images/shoe-list/timbsblue.jpg",
-        brand: "Timberland",
-        section: "Fall Hits"
+        image: "../../assets/images/shoe-list/purple-max.jpg",
+        brand: "Airmax",
+        section: "Most Wanted",
+        gen: "female"
         },
     
     {
         id: 17,
-        name: "Wheat Heels",
+        name: "All Star Max",
         gender: "Men's Shoe",
         kid: false,
         price: 110,
-        image: "../../assets/images/shoe-list/timbsheels.jpg",
-        brand: "Timberland",
-        section: "Member Exclusive"
+        image: "../../assets/images/shoe-list/red-blue-max.jpg",
+        brand: "Airmax",
+        section: "Members Exclusive",
+        gen: "male"
         },
     
     {
         id: 18,
-        name: "Wheat",
+        name: "Red Airmax",
         gender: "Men's Shoe",
         kid: false,
         price: 150,
-        image: "../../assets/images/shoe-list/timbswheat.jpg",
-        brand: "Timberland",
-        section: "Fall Hits"
+        image: "../../assets/images/shoe-list/red-max.jpg",
+        brand: "Airmax",
+        section: "Members Exclusive",
+        gen: "male"
         },
     
     {
         id: 19,
-        name: "All White Air Force One",
-        gender: "Kid's Shoe",
+        name: "Red Runners",
+        gender: "Men's Shoe",
         kid: true,
         price: 50,
-        image: "../../assets/images/shoe-list/kidnikeswhite.jpg",
+        image: "../../assets/images/shoe-list/red-nikes.jpg",
         brand: "Nike",
-        section: "other"
+        section: "Member Exclusive",
+        gen: "male"
         },
     
     {
         id: 20,
-        name: "All White Air Force One",
-        gender: "Kid's Shoe",
+        name: "Silver Max",
+        gender: "Men's Shoe",
         kid: true,
         price: 50,
-        image: "../../assets/images/shoe-list/kidsadidasblack.jpg",
-        brand: "Adidas",
-        section: "other"
+        image: "../../assets/images/shoe-list/silver-max.jpg",
+        brand: "Airmax",
+        section: "Most Wanted",
+        gen: "male"
         },
     
     {
         id: 21,
-        name: "All White Air Force One",
-        gender: "Kid's Shoe",
+        name: "Tan Forces",
+        gender: "Men's Shoe",
         kid: true,
         price: 50,
-        image: "../../assets/images/shoe-list/kidsforces.jpg",
+        image: "../../assets/images/shoe-list/tan-forces.jpg",
         brand: "Nike",
-        section: "Member Exclusive"
+        section: "Member Exclusive",
+        gen: "male"
     },
     
     {
         id: 22,
-        name: "All White Air Force One",
-        gender: "Kid's Shoe",
+        name: "Tan Nikes",
+        gender: "Men's Shoes",
         kid: true,
         price: 50,
-        image: "../../assets/images/shoe-list/kidsnikesred.jpg",
+        image: "../../assets/images/shoe-list/tan-nikes.jpg",
         brand: "Nike",
-        section: "other"
+        section: "Featured Items",
+        gen: "male"
     },
     
     {
         id: 23,
-        name: "All White Air Force One",
-        gender: "Kid's Shoe",
+        name: "Wheat Timbs",
+        gender: "Men's Shoe",
         kid: true,
         price: 50,
-        image: "../../assets/images/shoe-list/kidstimbsgreen.jpg",
+        image: "../../assets/images/shoe-list/wheat-timbs.jpg",
         brand: "Timberland",
-        section: "Fall Hits"
+        section: "Fall Hits",
+        gen: "male"
     },
 
     {
         id: 24,
-        name: "Black Jordans",
-        gender: "Men's Shoe",
+        name: "Timberland Heels",
+        gender: "Women's Shoe",
         kid: false,
         price: 140,
-        image: "../../assets/images/shoe-list/jordansblack.jpg",
+        image: "../../assets/images/shoe-list/timb-heels.jpg",
         brand: "Jordan",
-        section: "Trending"
+        section: "Fall Hits",
+        gen: "female"
     },
     {
         id: 25,
-        name: "Orange Jordans",
+        name: "Space Forces",
         gender: "Men's Shoe",
         kid: false,
         price: 140,
-        image: "../../assets/images/shoe-list/jordansorange.jpg",
+        image: "../../assets/images/shoe-list/space-nike.jpg",
         brand: "Jordan",
-        section: "Trending"
+        section: "Trend Two",
+        gen: "male"
+    },
+
+    {
+        id: 26,
+        name: "White Runners",
+        gender: "Men's Shoe",
+        kid: false,
+        price: 140,
+        image: "../../assets/images/shoe-list/white-nikes.jpg",
+        brand: "Jordan",
+        section: "Featured Items",
+        gen: "male"
+    },
+
+    {
+        id: 27,
+        name: "Blue Runners",
+        gender: "Men's Shoe",
+        kid: false,
+        price: 140,
+        image: "../../assets/images/shoe-list/blue-nikes.jpg",
+        brand: "Nike",
+        section: "Featured Items",
+        gen: "male"
     },
     
 ]

@@ -1,8 +1,10 @@
 
 
 <div>
-    <img src='{{ selectedProduct.image }}' alt="">
-    <h3>{{ selectedProduct.name }}</h3>
-    <p>{{ selectedProduct.gender }}</p>
-    <p *ngIf="selectedInfo">{{ selectedProduct.price }}</p>
+    <a routerLink="/product-detail/{{ selectedProduct.name }}/{{ selectedProduct.id }}">
+        <img src='{{ selectedProduct.image }}' alt="">
+    </a>
+    <h3 *ngIf="selectedInfo">{{ selectedProduct.name }}</h3>
+    <p *ngIf="selectedInfo">{{ selectedProduct.gender }}</p>
+    <p *ngIf="selectedInfo">${{ selectedProduct.price }}</p>
 </div>

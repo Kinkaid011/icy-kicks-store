@@ -1,11 +1,12 @@
 export interface Product {
     id: number;
     name: string;
-    gender: string;
+    gender: any;
     kid: boolean;
-    price: number;
+    price: any;
     image: any;
-    brand: string;
+    brand: any;
     section: string;
+    gen: string;
 }
 
